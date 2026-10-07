@@ -11,9 +11,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.PathVariable;
 
 
 @RestController
@@ -39,10 +36,10 @@ public class ProdutoV1Controller {
     }
     
     @PutMapping("/{id}")
-    public ResponseEntity<ProdutoResponseDto> atualizarProduto() {
+    public ResponseEntity<ProdutoResponseDto> atualizarProduto(
+            @RequestBody @Valid ProdutoPostPutDto produtoPostPutDto, @PathVariable Long id) {
         return ResponseEntity
             .status(HttpStatus.ACCEPTED)
-            .body(ProdutoCrudService.atualizarProduto());
-    }   
-
+            .body(produtoCrudService.atualizarProduto(produtoPostPutDto, id));
+    }
 }

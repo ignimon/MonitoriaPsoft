@@ -34,7 +34,8 @@ public class ProdutoCrudPadraoService implements ProdutoCrudService {
     }
 
     @Override
-    public ProdutoResponseDto atualizarProduto(ProdutoPostPutDto produtoPostPutDto) {
+    public ProdutoResponseDto atualizarProduto(ProdutoPostPutDto produtoPostPutDto, Long id) {
+        produtoRepository.findById(id).
         return null;
     }
 }
