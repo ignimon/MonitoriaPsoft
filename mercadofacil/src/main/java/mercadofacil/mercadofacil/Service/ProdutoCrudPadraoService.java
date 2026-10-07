@@ -6,13 +6,15 @@ import mercadofacil.mercadofacil.Dto.ProdutoResponseDto;
 import mercadofacil.mercadofacil.Model.Produto;
 import mercadofacil.mercadofacil.Repository.ProdutoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
 @Service
 public class ProdutoCrudPadraoService implements ProdutoCrudService {
-
+    
     @Autowired
     ModelMapper modelMapper;
 
@@ -35,7 +37,11 @@ public class ProdutoCrudPadraoService implements ProdutoCrudService {
 
     @Override
     public ProdutoResponseDto atualizarProduto(ProdutoPostPutDto produtoPostPutDto, Long id) {
-        produtoRepository.findById(id).
-        return null;
+        Produto produto = produtoRepository.findById(id)
+        .orElseThrow(() -> new ResponseStatusException(
+            HttpStatus.NOT_FOUND, 
+            "produto não encontrado"));
+            modelMapper.map(produtoPostPutDto, produto);
+        return modelMapper.map(produtoRepository.save(produto), ProdutoResponseDto.class);
     }
 }
