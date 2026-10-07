@@ -11,6 +11,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.PathVariable;
+
 
 @RestController
 @RequestMapping(value = "/v1/produtos", produces = MediaType.APPLICATION_JSON_VALUE)
@@ -33,6 +37,12 @@ public class ProdutoV1Controller {
                 .status(HttpStatus.OK)
                 .body(produtoCrudService.buscarTodosProdutos());
     }
-
+    
+    @PutMapping("/{id}")
+    public ResponseEntity<ProdutoResponseDto> atualizarProduto() {
+        return ResponseEntity
+            .status(HttpStatus.ACCEPTED)
+            .body(ProdutoCrudService.atualizarProduto());
+    }   
 
 }

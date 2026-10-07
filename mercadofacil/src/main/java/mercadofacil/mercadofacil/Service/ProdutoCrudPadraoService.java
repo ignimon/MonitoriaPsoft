@@ -32,4 +32,9 @@ public class ProdutoCrudPadraoService implements ProdutoCrudService {
                 .map(produto -> modelMapper.map(produto, ProdutoResponseDto.class))
                 .toList();
     }
+
+    @Override
+    public ProdutoResponseDto atualizarProduto(ProdutoPostPutDto produtoPostPutDto) {
+        return null;
+    }
 }

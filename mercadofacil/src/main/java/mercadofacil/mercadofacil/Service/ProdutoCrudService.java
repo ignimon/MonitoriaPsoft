@@ -9,4 +9,6 @@ public interface ProdutoCrudService {
     ProdutoResponseDto criarProduto(ProdutoPostPutDto produtoPostPutDto);
 
     List<ProdutoResponseDto> buscarTodosProdutos();
+
+    ProdutoResponseDto atualizarProduto(ProdutoPostPutDto produtoPostPutDto);
 }
