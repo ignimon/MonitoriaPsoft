@@ -1,4 +1,4 @@
-# Mercado Fácil — Front-end
+# Mercado Fácil
 ## Como rodar
 
 1. Suba o back-end (na pasta `mercadofacil`):
@@ -21,9 +21,9 @@
 | Editar produto   | PUT    | `/v1/produtos/{id}`  | **a implementar** |
 | Remover produto  | DELETE | `/v1/produtos/{id}`  | **a implementar** |
 
-Enquanto as rotas de editar e remover não existirem no back-end, o Spring responde
+enquanto remover não existir no back-end, o Spring responde
 `404` e a tela mostra uma mensagem avisando que a rota ainda não foi implementada.
----
+
 ## MonitoriaPsoft
 Materiais e códigos da disciplina de Projeto de Software.
 
