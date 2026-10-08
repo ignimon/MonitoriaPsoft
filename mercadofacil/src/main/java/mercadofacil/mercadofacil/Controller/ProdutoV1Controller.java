@@ -5,6 +5,7 @@ import mercadofacil.mercadofacil.Dto.ProdutoPostPutDto;
 import mercadofacil.mercadofacil.Dto.ProdutoResponseDto;
 import mercadofacil.mercadofacil.Service.ProdutoCrudService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.graphql.GraphQlProperties.Http;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -42,4 +43,9 @@ public class ProdutoV1Controller {
             .status(HttpStatus.ACCEPTED)
             .body(produtoCrudService.atualizarProduto(produtoPostPutDto, id));
     }
+
+    @DeleteMapping("/{id}")
+    public HttpStatus deletarProduto(@PathVariable Long id){
+            return HttpStatus.ACCEPTED;
+        }
 }

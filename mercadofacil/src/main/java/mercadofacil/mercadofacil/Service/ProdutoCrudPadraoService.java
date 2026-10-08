@@ -44,4 +44,10 @@ public class ProdutoCrudPadraoService implements ProdutoCrudService {
             modelMapper.map(produtoPostPutDto, produto);
         return modelMapper.map(produtoRepository.save(produto), ProdutoResponseDto.class);
     }
+
+    @Override
+    public HttpStatus deletarProduto(Long id) {
+        produtoRepository.deleteById(id);
+        return HttpStatus.OK;
+    }
 }
