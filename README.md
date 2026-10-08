@@ -19,7 +19,7 @@
 | Listar produtos  | GET    | `/v1/produtos`       | implementado      |
 | Criar produto    | POST   | `/v1/produtos`       | implementado      |
 | Editar produto   | PUT    | `/v1/produtos/{id}`  | implementado      |
-| Remover produto  | DELETE | `/v1/produtos/{id}`  | **a implementar** |
+| Remover produto  | DELETE | `/v1/produtos/{id}`  | implementado      |
 
 enquanto remover não existir no back-end, o Spring responde
 `404` e a tela mostra uma mensagem avisando que a rota ainda não foi implementada.
