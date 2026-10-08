@@ -45,7 +45,9 @@ public class ProdutoV1Controller {
     }
 
     @DeleteMapping("/{id}")
-    public HttpStatus deletarProduto(@PathVariable Long id){
-            return HttpStatus.ACCEPTED;
+    public ResponseEntity<ProdutoResponseDto> deletarProduto(@PathVariable Long id){
+            return ResponseEntity
+            .status(HttpStatus.ACCEPTED)
+            .body(produtoCrudService.deletarProduto(id));
         }
 }

@@ -46,8 +46,12 @@ public class ProdutoCrudPadraoService implements ProdutoCrudService {
     }
 
     @Override
-    public HttpStatus deletarProduto(Long id) {
+    public ProdutoResponseDto deletarProduto(Long id) {
+        Produto produto = produtoRepository.findById(id)
+        .orElseThrow(() -> new ResponseStatusException(
+            HttpStatus.NOT_FOUND, 
+            "produto não encontrado"));
         produtoRepository.deleteById(id);
-        return HttpStatus.OK;
+        return modelMapper.map(produto ,ProdutoResponseDto.class);
     }
 }
