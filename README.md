@@ -18,7 +18,7 @@
 |------------------|--------|----------------------|-------------------|
 | Listar produtos  | GET    | `/v1/produtos`       | implementado      |
 | Criar produto    | POST   | `/v1/produtos`       | implementado      |
-| Editar produto   | PUT    | `/v1/produtos/{id}`  | **a implementar** |
+| Editar produto   | PUT    | `/v1/produtos/{id}`  | implementado      |
 | Remover produto  | DELETE | `/v1/produtos/{id}`  | **a implementar** |
 
 enquanto remover não existir no back-end, o Spring responde
