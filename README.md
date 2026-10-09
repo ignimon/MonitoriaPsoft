@@ -28,9 +28,6 @@
 - [ ] pseudoPayment.
 - [ ] others. (thinking of).
 
-enquanto remover não existir no back-end, o Spring responde
-`404` e a tela mostra uma mensagem avisando que a rota ainda não foi implementada.
-
 ## MonitoriaPsoft
 Materiais e códigos da disciplina de Projeto de Software.
 
