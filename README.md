@@ -21,6 +21,13 @@
 | Editar produto   | PUT    | `/v1/produtos/{id}`  | implementado      |
 | Remover produto  | DELETE | `/v1/produtos/{id}`  | implementado      |
 
+## Roadmap Adições extras (apenas coisas que quero implementar por curiosidade)
+- [ ] login.
+- [ ] improvents on the frontEnd.
+- [ ] add to cart.
+- [ ] pseudoPayment.
+- [ ] others. (thinking of).
+
 enquanto remover não existir no back-end, o Spring responde
 `404` e a tela mostra uma mensagem avisando que a rota ainda não foi implementada.
 
